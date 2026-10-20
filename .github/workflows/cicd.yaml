@@ -32,6 +32,8 @@ jobs:
         run: npm ci
 
       - name: Build React application
+        env:
+          REACT_APP_API_URL: ${{ vars.REACT_APP_API_URL }}
         run: npm run build
 
       - name: Configure AWS credentials using OIDC
